@@ -138,4 +138,14 @@ if __name__ == "__main__":
         gr.Markdown("### 🤖 You are talking to **Shailesh Kumar's** chatbot. You can ask me questions related to my professional career and expertise.")
         gr.ChatInterface(me.chat, type="messages")
 
+        # Inject CSS to increase height of the chatbot area
+        gr.HTML("""
+        <style>
+            #my-chat .message-list {
+                height: 600px !important;
+                overflow-y: auto;
+            }
+        </style>
+        """)
+
     demo.launch()
