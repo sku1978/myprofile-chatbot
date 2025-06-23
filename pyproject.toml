@@ -1,0 +1,14 @@
+[project]
+name = "myprofile"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+        "huggingface_hub==0.25.2",
+        "gradio>=5.14.0",
+        "openai==1.91.0",
+        "pypdf==5.6.1",
+        "python-dotenv==1.1.0",
+        "Requests==2.32.4"
+]
