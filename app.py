@@ -134,7 +134,7 @@ if __name__ == "__main__":
     me = Me()
 #    gr.ChatInterface(me.chat, type="messages").launch()
 
-    with gr.Blocks() as demo:
+    with gr.Blocks(fill_height=True) as demo:
         gr.Markdown("### 🤖 You are talking to **Shailesh Kumar's** chatbot. You can ask me questions related to my professional career and expertise.")
         gr.ChatInterface(me.chat, type="messages")
 
