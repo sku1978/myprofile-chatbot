@@ -132,13 +132,20 @@ This is important: If the user has more than 5 questions, suggest they get in to
 
 if __name__ == "__main__":
     me = Me()
-#    gr.ChatInterface(me.chat, type="messages").launch()
-
+    
+    # Create the Gradio interface
     with gr.Blocks() as demo:
         gr.Markdown("### 🤖 You are talking to **Shailesh Kumar's** chatbot. You can ask me questions related to my professional career and expertise.")
         
-        with gr.Box(style="height: 600px; overflow-y: auto;"):
-           gr.ChatInterface(me.chat, type="messages")
+        # Create a Chatbot instance with desired height
+        # This allows controlling the height of the chat history display area.
+        chatbot_component = gr.Chatbot(height=500) 
 
+        # Pass the pre-configured chatbot to ChatInterface
+        gr.ChatInterface(
+            me.chat, 
+            chatbot=chatbot_component, # Use the pre-configured chatbot
+            type="messages"
+        )
 
     demo.launch()
